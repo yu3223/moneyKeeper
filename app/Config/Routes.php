@@ -31,7 +31,10 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/register', 'MembersView::registerPage');
+$routes->get('/login', 'MembersView::loginPage');
+$routes->get('/signupSuccess', 'MembersView::successPage');
 
+$routes->post('/signup', 'MembersController::signUp');
 
 /*
  * --------------------------------------------------------------------

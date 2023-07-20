@@ -38,11 +38,11 @@
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
                             <?= service('validation')->listErrors() ?> 
-                            <form class="user" action="/members/register" method="post">
+                            <form class="user" action="/signup" method="post">
                             <?= csrf_field() ?>
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                        placeholder="Name" name="Name" required>                
+                                        placeholder="Name" name="name" required>                
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user" id="exampleInputEmail"
@@ -58,8 +58,10 @@
                                             id="exampleRepeatPassword" placeholder="Repeat Password" name="rePassword" required>
                                     </div>
                                 </div>
+                                <!-- <div class="form-group d-flex justify-content-center">
+                                    <button type="submit" name="submit" class="btn btn-primary btn-user btn-block">Register Account</button>
+                                </div> -->
                                 <input type="submit" class="btn btn-primary btn-user btn-block" value="Register Account">
-                                
                                 <hr>
                                 <a href="index.html" class="btn btn-google btn-user btn-block">
                                     <i class="fab fa-google fa-fw"></i> Register with Google
@@ -73,7 +75,7 @@
                                 <a class="small" href="forgot-password.html">Forgot Password?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="<?php echo base_url('members')?>">Already have an account? Login!</a>
+                                <a class="small" href="<?php echo base_url('login')?>">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>
