@@ -35,6 +35,7 @@ $routes->get('/login', 'MembersView::loginPage');
 $routes->get('/signupSuccess', 'MembersView::successPage');
 
 $routes->post('/signup', 'MembersController::signUp');
+$routes->post('/signIn', 'MembersController::signIn');
 
 /*
  * --------------------------------------------------------------------
