@@ -12,7 +12,6 @@ class MembersController extends BaseController
 
     /**
      * Member model.
-     * 
      *
      * @var MembersModel
      */
