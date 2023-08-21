@@ -12,7 +12,6 @@ class MembersController extends BaseController
 
     /**
      * Member model.
-     * 
      *
      * @var MembersModel
      */
@@ -77,7 +76,13 @@ class MembersController extends BaseController
         if ($memberData === null) {
             return $this->fail("Signup fail.");
         } else {
-            return redirect()->to("/signupSuccess");
+            return $this->respond([
+                "msg"  => "Signup success.",
+                "data" => [
+                    "email" => $email,
+                    "name"    => $name,
+                ]
+            ]);
         }
     }
 

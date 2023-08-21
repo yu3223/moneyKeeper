@@ -49,9 +49,13 @@ class MembersView extends BaseController
      *
      * @return void
      */
-    public function registerSuccessPage()
-    {
-       return view('members/signupSuccess');
-    }
+// <<<<<<< login
+//     public function registerSuccessPage()
+// =======
+//     public function RegisterSuccessPage()
+// >>>>>>> dev
+//     {
+//        return view('members/signupSuccess');
+//     }
 
 }
