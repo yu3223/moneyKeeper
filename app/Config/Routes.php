@@ -32,10 +32,14 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/register', 'MembersView::registerPage');
 $routes->get('/login', 'MembersView::loginPage');
-$routes->get('/signupSuccess', 'MembersView::successPage');
+$routes->get('/signupSuccess', 'MembersView::registerSuccessPage');
 
 $routes->post('/signup', 'MembersController::signUp');
 $routes->post('/signIn', 'MembersController::signIn');
+$routes->get('/logout', 'MembersController::logout');
+
+$routes->get('/homepage', 'FeaturesView::homePage');
+
 
 /*
  * --------------------------------------------------------------------

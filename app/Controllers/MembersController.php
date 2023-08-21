@@ -117,12 +117,28 @@ class MembersController extends BaseController
                 'name'  => $memberData["m_name"],
                 'id'    => $memberData["m_id"]
             ];
-        }
+            
+            $this->session->set("member", $memberData); 
 
-        return $this->respond([
-            "msg"  => "Loin success.",
-            "data" => $memberData,
-        ]);
-
+            return $this->respond([
+                "msg"  => "Login success.",
+                "data" => $memberData,
+            ]);
+        }   
     }
+
+    /**
+     * Logout
+     *
+     * @return void
+     */
+    public function logout()
+    {
+        //Destroy session.
+        $this->session->destroy("member");
+
+        //Redirect to login page.
+        return redirect()->to(base_url("/login"));
+    }
+
 }
