@@ -58,9 +58,6 @@
                                             id="exampleRepeatPassword" placeholder="Repeat Password" name="rePassword" required>
                                     </div>
                                 </div>
-                                <!-- <div class="form-group d-flex justify-content-center">
-                                    <button type="submit" name="submit" class="btn btn-primary btn-user btn-block">Register Account</button>
-                                </div> -->
                                 <input type="submit" class="btn btn-primary btn-user btn-block" value="Register Account">
                                 <hr>
                                 <a href="index.html" class="btn btn-google btn-user btn-block">

@@ -42,6 +42,16 @@ abstract class BaseController extends Controller
      * The creation of dynamic property is deprecated in PHP 8.2.
      */
     protected $session;
+// <<<<<<< login
+
+//     /**
+//      * the user data from the session.
+//      * 
+//      * @var array|null
+//      */
+// //     protected ?array $memberData = null;
+// =======
+// >>>>>>> dev
 
     /**
      * Constructor.
@@ -54,5 +64,10 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         $this->session = \Config\Services::session();
+// <<<<<<< login
+
+// //         $this->memberData = $this->session->get('member');
+// =======
+// >>>>>>> dev
     }
 }

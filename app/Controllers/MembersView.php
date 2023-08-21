@@ -23,7 +23,11 @@ class MembersView extends BaseController
      */
     public function registerPage()
     {   
-        return view('members/register'); 
+        if ($this->session->get("member") !== null) {
+            return redirect()->to(base_url("/homepage"));
+        } else {
+            return view('members/register');
+        }
     }
 
     /**
@@ -31,9 +35,13 @@ class MembersView extends BaseController
      *
      * @return void
      */
-    public function loginPage()
-    {
-       return view('members/login');
+    public function LoginPage()
+    {   
+        if ($this->session->get("member") !== null) {
+            return redirect()->to(base_url("/homepage"));
+        } else {
+            return view('members/login');
+        }
     }
 
     /**
@@ -41,9 +49,13 @@ class MembersView extends BaseController
      *
      * @return void
      */
-    public function RegisterSuccessPage()
-    {
-       return view('members/signupSuccess');
-    }
+// <<<<<<< login
+//     public function registerSuccessPage()
+// =======
+//     public function RegisterSuccessPage()
+// >>>>>>> dev
+//     {
+//        return view('members/signupSuccess');
+//     }
 
 }
