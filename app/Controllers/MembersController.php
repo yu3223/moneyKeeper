@@ -80,7 +80,7 @@ class MembersController extends BaseController
                 "msg"  => "Signup success.",
                 "data" => [
                     "email" => $email,
-                    "name"    => $name,
+                    "name"  => $name,
                 ]
             ]);
         }
@@ -120,7 +120,7 @@ class MembersController extends BaseController
             $memberData = [
                 'email' => $memberData["m_email"],
                 'name'  => $memberData["m_name"],
-                'id'    => $memberData["m_id"]
+                'id'    => $memberData["m_id"],
             ];
             
             $this->session->set("member", $memberData); 
@@ -146,4 +146,38 @@ class MembersController extends BaseController
         return redirect()->to(base_url("/login"));
     }
 
+    /**
+     * Edit member profile.
+     *
+     * @return void
+     */
+    public function editProfile()
+    {
+        $data = $this->session->member;
+        $email = $data['email'];
+
+        // Get data from request.
+        $newData = $this->request->getPost();
+
+        $newName     = $newData['name'];        
+        $newPassword = $newData['password'];
+
+        if($newName != ""){
+            $this->membersModel->where('m_email', $email)->set(['m_name' => $newName])->update();
+        }
+        if($newPassword != ""){
+            $this->membersModel->where('m_email', $email)->set(['m_password' => sha1($newPassword)])->update();
+        }
+        if($newName === "" && $newPassword === ""){
+            return $this->fail("Please input new name or password.", 403);
+        }
+    
+        return $this->respond([
+            "msg"  => "Update success.",
+            "data" => [
+                "name"     => $newName,
+                "password" => $newPassword,
+            ]
+        ]);
+    }
 }

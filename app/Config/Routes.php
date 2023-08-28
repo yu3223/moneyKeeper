@@ -41,8 +41,11 @@ $routes->get('/login', 'MembersView::loginPage');
 $routes->post('/signup', 'MembersController::signUp');
 $routes->post('/signIn', 'MembersController::signIn');
 $routes->get('/logout', 'MembersController::logout');
+$routes->post('/editProfile', 'MembersController::editProfile');
+
 
 $routes->get('/homepage', 'FeaturesView::homePage');
+$routes->get('/userProfile', 'FeaturesView::userProfile');
 
 
 /*

@@ -39,8 +39,7 @@
                 ><?= esc($name)?></a
               >
               <div class="dropdown-menu rounded-0 m-0">
-                <a href="" class="dropdown-item">會員資料</a>
-                <a href="" class="dropdown-item">Blog Detail</a>
+                <a href="<?= base_url("/userProfile") ?>" class="dropdown-item">會員資料</a>
               </div>
             </div>
           </div>

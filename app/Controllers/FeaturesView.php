@@ -28,4 +28,18 @@ class FeaturesView extends BaseController
         ];
         return view('pages/homePage', $data); 
     }
+
+    /**
+     * return userProfile page.
+     *
+     * @return void
+     */
+    public function userProfile()
+    {   
+        $data = [
+            'name'     => $this->session->get("member")['name'],
+            'email'    => $this->session->get("member")['email'],
+        ];
+        return view('pages/userProfile', $data); 
+    }
 }
